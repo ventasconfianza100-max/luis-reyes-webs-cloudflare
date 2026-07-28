@@ -1,5 +1,5 @@
 export default function Hero({ onNavigate }) {
-  const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una web para mi negocio.')
+  const whatsapp = 'https://wa.me/56922012534?text=' + encodeURIComponent('Hola Luis, vi tu página y quiero cotizar una página web o un software para mi negocio.')
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-white to-brand-50/70">
       {/* Imagen a sangre completa en la mitad derecha (desktop) */}
@@ -28,17 +28,17 @@ export default function Hero({ onNavigate }) {
       <div className="relative max-w-7xl mx-auto px-6 pt-10 pb-12 md:pt-14 md:pb-16">
         <div className="md:w-[48%] md:pr-6">
           <span className="inline-block text-sm font-semibold uppercase tracking-wider text-brand-600 mb-5">
-            Desarrollo web · Talca, Chile
+            Páginas web y software · Talca, Chile
           </span>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] text-slate-900">
-            Páginas web para negocios, tiendas y profesionales en Chile
+            Páginas web y software a medida para hacer crecer tu negocio
           </h1>
 
           <p className="mt-7 text-lg text-slate-600 leading-relaxed max-w-xl">
-            Diseño sitios rápidos, administrables y preparados para aparecer en Google.
-            Trabajo desde Talca con clientes de todo Chile y adapto la estructura a la
-            forma en que vendes: por WhatsApp, agenda, cotizaciones o tienda online.
+            Creo páginas web que generan contactos y también programas, aplicaciones y
+            sistemas que ordenan tu negocio. Trabajo desde Talca con clientes de todo Chile:
+            desde una web para vender más hasta software que automatiza tareas y ahorra tiempo.
           </p>
 
           {/* Doble CTA */}
@@ -106,7 +106,7 @@ export default function Hero({ onNavigate }) {
             </div>
             <div>
               <p className="text-sm text-slate-800 font-semibold leading-tight">
-                Luis Reyes Castro · Desarrollo web para negocios y profesionales
+                Luis Reyes Castro · Desarrollo web y software para negocios
               </p>
               <p className="text-sm text-slate-500 mt-0.5">
                 Talca, Región del Maule · Atención directa, sin intermediarios
@@ -114,10 +114,11 @@ export default function Hero({ onNavigate }) {
             </div>
           </div>
           <div className="mt-7 flex flex-wrap gap-2 text-xs font-medium text-slate-600">
-            {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios'].map((item) => (
+            {['Web para profesionales', 'Catálogos y tiendas', 'Empresas de servicios', 'Software y aplicaciones'].map((item) => (
               <span key={item} className="rounded-full border border-slate-200 bg-white/80 px-3 py-1.5 shadow-sm">{item}</span>
             ))}
           </div>
+          <a href="/desarrollo-software-aplicaciones" onClick={(event) => { event.preventDefault(); onNavigate('/desarrollo-software-aplicaciones') }} className="inline-flex mt-4 mr-5 text-sm font-semibold text-brand-700 hover:text-brand-800">¿Necesitas un programa o sistema? Ver software →</a>
           <a href="/diagnostico-web" onClick={(event) => { event.preventDefault(); onNavigate('/diagnostico-web') }} className="inline-flex mt-4 text-sm font-semibold text-brand-700 hover:text-brand-800">¿No sabes qué necesitas? Haz el diagnóstico web →</a>
         </div>
       </div>

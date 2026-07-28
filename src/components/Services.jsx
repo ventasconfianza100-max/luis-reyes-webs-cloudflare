@@ -43,6 +43,20 @@ const services = [
     cta: 'Ver ejemplo de empresa',
     ctaHref: '/proyectos-empresas',
   },
+  {
+    num: '04',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+    ),
+    accent: 'bg-sky-50 text-sky-600',
+    title: 'Software y aplicaciones',
+    lead: 'Para negocios que quieren ahorrar tiempo y ordenar su operación.',
+    description:
+      'Programas, sistemas de gestión, aplicaciones web y automatizaciones creados según tu forma real de trabajar.',
+    detail: 'clientes, pedidos, inventario, agenda, reportes, tareas repetitivas o integraciones.',
+    cta: 'Ver soluciones de software',
+    ctaHref: '/desarrollo-software-aplicaciones',
+  },
 ]
 
 const microNotes = [
@@ -59,15 +73,15 @@ export default function Services({ onNavigate }) {
           Servicios
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-          El tipo de web depende de lo que vendes
+          Una solución digital según lo que necesitas resolver
         </h2>
         <p className="mt-4 text-slate-500 leading-relaxed">
-          No es lo mismo una tienda con productos, una consulta profesional o una empresa que necesita
-          cotizaciones. Por eso adapto la estructura, los textos y el diseño según el negocio.
+          Puedo ayudarte a vender y captar clientes con una página web, o a ordenar procesos con
+          software propio. La solución se diseña según tu negocio, sin paquetes genéricos.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {services.map((s) => (
           <div
             key={s.num}
@@ -110,37 +124,6 @@ export default function Services({ onNavigate }) {
             </a>
           </div>
         ))}
-      </div>
-
-      {/* Franja destacada: software y aplicaciones a medida */}
-      <div className="mt-6 rounded-3xl border border-slate-100 bg-white shadow-soft p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-5 md:gap-8">
-        <div className="w-11 h-11 shrink-0 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-          </svg>
-        </div>
-        <div className="flex-1">
-          <h3 className="font-display text-lg font-bold text-slate-900">
-            ¿Necesitas algo más que una web? Software y aplicaciones a medida
-          </h3>
-          <p className="text-slate-500 text-sm leading-relaxed mt-1.5">
-            También creo programas, sistemas de gestión, apps web y automatizaciones hechos a la
-            medida de tu negocio. Código propio para resolver el problema concreto que te quita tiempo.
-          </p>
-        </div>
-        <a
-          href="/desarrollo-software-aplicaciones"
-          onClick={(event) => {
-            event.preventDefault()
-            onNavigate('/desarrollo-software-aplicaciones')
-          }}
-          className="shrink-0 inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm px-6 py-3 rounded-2xl transition-all hover:-translate-y-0.5 w-fit"
-        >
-          Ver desarrollo de software
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
       </div>
 
       {/* Micro-notas de cercanía */}

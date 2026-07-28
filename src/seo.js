@@ -5,9 +5,9 @@ export const SITE_URL = 'https://www.luisreyesweb.cl'
 
 export const metaByPath = {
   '/': {
-    title: 'Diseño y Desarrollo Web en Talca, Chile | Luis Reyes Castro',
+    title: 'Páginas Web y Software a Medida en Chile | Luis Reyes Castro',
     description:
-      'Diseño y programación de páginas web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Sitios rápidos, optimizados para Google y pensados para captar clientes. Talca, Región del Maule.',
+      'Desarrollo páginas web, software, programas y aplicaciones a medida para negocios en Chile. Soluciones para vender más, automatizar tareas y ordenar procesos. Talca, Región del Maule.',
   },
   '/diseno-web-talca': {
     title: 'Diseño Web en Talca | Páginas web para negocios — Luis Reyes Castro',
@@ -80,7 +80,7 @@ export const metaByPath = {
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
     description:
-      'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar la página web de tu consulta psicológica.',
+      'Agenda una reunión sin compromiso con Luis Reyes Castro por Google Meet, Zoom o WhatsApp para cotizar una página web, software o aplicación para tu negocio.',
   },
   '/blog': {
     title: 'Blog sobre diseño web, negocios y presencia online | Luis Reyes Castro',
@@ -151,9 +151,9 @@ const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': `${SITE_URL}/#business`,
-  name: 'Luis Reyes Castro — Diseño y Desarrollo Web',
+  name: 'Luis Reyes Castro — Páginas Web y Software a Medida',
   description:
-    'Diseño y desarrollo de sitios web para negocios en Chile: tiendas online, empresas de servicios y profesionales. Talca, Región del Maule.',
+    'Desarrollo de páginas web, software, programas y aplicaciones a medida para negocios en Chile. Talca, Región del Maule.',
   url: SITE_URL,
   image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/profile.jpg`,
@@ -256,7 +256,7 @@ const faqSchema = {
       name: '¿Qué tipo de páginas web haces?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Hago sitios para profesionales independientes, tiendas online con carrito y panel de administración, y webs multipágina para empresas de servicios con SEO local. He desarrollado proyectos reales en estos tres rubros.',
+        text: 'Hago sitios para profesionales, tiendas online y empresas de servicios. También desarrollo software, programas, aplicaciones web, sistemas de gestión y automatizaciones a medida para negocios.',
       },
     },
     {
