@@ -1,0 +1,17 @@
+{
+  "name": "Luis Reyes Castro — Diseño Web para Psicólogos",
+  "short_name": "Luis Reyes Webs",
+  "description": "Diseño web para psicólogos en Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f3ff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

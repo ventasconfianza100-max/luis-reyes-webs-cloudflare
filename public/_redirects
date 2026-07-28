@@ -1,0 +1,2 @@
+# Las rutas prerenderizadas se sirven desde su propio index.html.
+# La redirección sin www -> www se configura como Redirect Rule en Cloudflare.

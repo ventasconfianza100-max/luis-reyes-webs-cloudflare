@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 35%, #f6f5ff 70%, #f8faff 100%);
+  min-height: 100vh;
+  color: #0f172a;
+}
+
+/* Titulares con fuente display */
+.font-display {
+  font-family: 'Sora', 'Inter', system-ui, sans-serif;
+}
+
+/* Accesibilidad: foco visible claro y consistente en interactivos */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Aparición suave al entrar en viewport (reveal on scroll).
+   Se activa añadiendo la clase .is-visible vía IntersectionObserver. */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
