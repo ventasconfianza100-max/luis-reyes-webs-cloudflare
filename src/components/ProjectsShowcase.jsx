@@ -13,15 +13,26 @@ const projects = [
     href: '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente',
   },
   {
-    name: 'Tienda online',
+    name: 'Munay Cueros',
     type: 'E-commerce a medida',
     result:
-      'Tienda completa con su propio panel para que el dueño gestione productos, precios y stock sin depender de nadie ni pagar mensualidades.',
+      'Tienda online para una marca de productos de cuero, con catálogo claro y gestión propia para vender sin depender de plataformas externas.',
     built: ['Catálogo por categorías', 'Carrito de compras', 'Panel de administración propio', 'Envíos a todo Chile'],
     image: '/portfolio-tienda.webp',
-    alt: 'Tienda online real con catálogo y carrito de compras, desarrollada por Luis Reyes',
+    alt: 'Tienda online de Munay Cueros con catálogo y carrito de compras, desarrollada por Luis Reyes',
     chip: 'bg-amber-50 text-amber-600 border-amber-200',
     href: '/proyectos-empresas/munay-cueros',
+  },
+  {
+    name: 'Escuela de Fútbol RDLF',
+    type: 'Plataforma deportiva',
+    result:
+      'Sitio institucional para centralizar categorías, entrenadores, horarios, sedes, fotografías, torneos e inscripciones.',
+    built: ['Información para familias', 'Galería organizada por fechas', 'Fixture y módulo de torneos', 'Inscripción directa por WhatsApp'],
+    image: '/portfolio-escuela-rdlf.webp',
+    alt: 'Sitio web de la Escuela de Fútbol Ronald De La Fuente en Curicó, desarrollado por Luis Reyes',
+    chip: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    href: '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente',
   },
   {
     name: 'Profesional independiente',
@@ -80,7 +91,7 @@ export default function ProjectsShowcase({ onNavigate }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {projects.map((p) => (
           <div
             key={p.name}
