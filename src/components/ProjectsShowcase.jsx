@@ -10,6 +10,7 @@ const projects = [
     image: '/portfolio-servicios.webp',
     alt: 'Sitio web real de una empresa de servicios en Talca, desarrollado por Luis Reyes',
     chip: 'bg-rose-50 text-rose-600 border-rose-200',
+    href: '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente',
   },
   {
     name: 'Tienda online',
@@ -20,6 +21,7 @@ const projects = [
     image: '/portfolio-tienda.webp',
     alt: 'Tienda online real con catálogo y carrito de compras, desarrollada por Luis Reyes',
     chip: 'bg-amber-50 text-amber-600 border-amber-200',
+    href: '/proyectos-empresas/munay-cueros',
   },
   {
     name: 'Profesional independiente',
@@ -62,7 +64,7 @@ function Check() {
   )
 }
 
-export default function ProjectsShowcase() {
+export default function ProjectsShowcase({ onNavigate }) {
   return (
     <Section>
       <div className="text-center max-w-2xl mx-auto mb-12">
@@ -105,6 +107,11 @@ export default function ProjectsShowcase() {
                   ))}
                 </ul>
               </div>
+              {p.href && (
+                <a href={p.href} onClick={(event) => { event.preventDefault(); onNavigate(p.href) }} className="mt-5 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-800">
+                  Ver caso completo →
+                </a>
+              )}
             </div>
           </div>
         ))}

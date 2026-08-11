@@ -77,6 +77,16 @@ export const metaByPath = {
     description:
       'Caso de diseño web para una clínica o centro de atención psicológica en Chile: servicios, equipo y agendamiento en un sitio profesional.',
   },
+  '/proyectos-empresas/munay-cueros': {
+    title: 'Tienda Online para Munay Cueros | Caso de e-commerce en Chile',
+    description:
+      'Caso real de e-commerce para Munay Cueros: catálogo por categorías, carrito, gestión de productos y stock, panel de administración y diseño adaptable a celulares.',
+  },
+  '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente': {
+    title: 'Web para Escuela de Fútbol en Curicó | Caso RDLF',
+    description:
+      'Caso real de desarrollo web para la Escuela de Fútbol Ronald De La Fuente: categorías, horarios, sedes, entrenadores, galería, torneos e inscripción por WhatsApp.',
+  },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
     description:
@@ -104,7 +114,7 @@ export function getMeta(path) {
 }
 
 export function canonicalFor(path) {
-  return path === '/' ? SITE_URL : `${SITE_URL}${path}`
+  return path === '/' ? SITE_URL : `${SITE_URL}${path}/`
 }
 
 // Tipo de Open Graph: los artículos del blog son "article", el resto "website".
@@ -294,6 +304,8 @@ const breadcrumbLabels = {
   '/proyectos/consulta-terapeutica-online': 'Consulta terapéutica online',
   '/proyectos/perfil-profesional-redes': 'Perfil profesional para redes',
   '/proyectos-empresas/clinica-centro-atencion': 'Clínica y centro de atención',
+  '/proyectos-empresas/munay-cueros': 'Tienda online Munay Cueros',
+  '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente': 'Web Escuela de Fútbol RDLF',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
 }
@@ -315,7 +327,7 @@ function blocksToPlainText(blocks) {
 }
 
 function blogPostSchema(post) {
-  const url = `${SITE_URL}/blog/${post.slug}`
+  const url = canonicalFor(`/blog/${post.slug}`)
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -350,7 +362,7 @@ function blogIndexSchema() {
     name: 'Blog — Luis Reyes Castro',
     description:
       'Artículos sobre diseño web, precios, presencia digital y cómo captar más clientes para tu negocio en Chile.',
-    url: `${SITE_URL}/blog`,
+    url: canonicalFor('/blog'),
     inLanguage: 'es-CL',
     publisher: { '@id': `${SITE_URL}/#business` },
     blogPost: blogPosts.map((post) => ({
@@ -358,7 +370,7 @@ function blogIndexSchema() {
       headline: post.title,
       description: post.description,
       datePublished: post.datePublished,
-      url: `${SITE_URL}/blog/${post.slug}`,
+      url: canonicalFor(`/blog/${post.slug}`),
     })),
   }
 }
@@ -373,7 +385,7 @@ function breadcrumbSchema(path) {
     acc += `/${seg}`
     items.push({
       name: breadcrumbLabels[acc] || seg,
-      url: `${SITE_URL}${acc}`,
+      url: canonicalFor(acc),
     })
   }
 
@@ -427,11 +439,14 @@ export function jsonLdFor(path) {
     inLanguage: 'es-CL',
   })
 
-  if (
-    path === '/paginas-web-para-psicologos' ||
-    path === '/catalogo-online-con-whatsapp' ||
-    path === '/desarrollo-software-aplicaciones'
-  ) {
+  if ([
+    '/diseno-web-talca',
+    '/tienda-online-chile',
+    '/paginas-web-empresas-servicios',
+    '/paginas-web-para-psicologos',
+    '/catalogo-online-con-whatsapp',
+    '/desarrollo-software-aplicaciones',
+  ].includes(path)) {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -440,6 +455,18 @@ export function jsonLdFor(path) {
       provider: { '@id': `${SITE_URL}/#business` },
       areaServed: { '@type': 'Country', name: 'Chile' },
       url: canonicalFor(path),
+    })
+  }
+
+  if (path === '/proyectos-empresas/munay-cueros' || path === '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente') {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: getMeta(path).title.split(' | ')[0],
+      description: getMeta(path).description,
+      url: canonicalFor(path),
+      inLanguage: 'es-CL',
+      creator: { '@id': `${SITE_URL}/#business` },
     })
   }
 
