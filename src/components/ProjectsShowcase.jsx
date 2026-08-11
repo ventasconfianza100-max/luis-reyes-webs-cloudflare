@@ -18,7 +18,7 @@ const projects = [
     result:
       'Tienda online para una marca de productos de cuero, con catálogo claro y gestión propia para vender sin depender de plataformas externas.',
     built: ['Catálogo por categorías', 'Carrito de compras', 'Panel de administración propio', 'Envíos a todo Chile'],
-    image: '/portfolio-tienda.webp',
+    image: '/portfolio-munay-cueros.webp',
     alt: 'Tienda online de Munay Cueros con catálogo y carrito de compras, desarrollada por Luis Reyes',
     chip: 'bg-amber-50 text-amber-600 border-amber-200',
     href: '/proyectos-empresas/munay-cueros',
