@@ -1,18 +1,18 @@
 const projects = [
   {
+    href: '/proyectos-empresas/munay-cueros',
+    title: 'Tienda online Munay Cueros',
+    category: 'E-commerce real',
+  },
+  {
+    href: '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente',
+    title: 'Escuela de Fútbol Ronald De La Fuente',
+    category: 'Sitio institucional real',
+  },
+  {
     href: '/proyectos-empresas/clinica-centro-atencion',
     title: 'Sitio para clínica o centro de atención',
     category: 'Web institucional',
-  },
-  {
-    href: '/proyectos-empresas',
-    title: 'Página para negocio local',
-    category: 'Presencia comercial',
-  },
-  {
-    href: '/proyectos-empresas',
-    title: 'Landing para servicio específico',
-    category: 'Captación de clientes',
   },
 ]
 

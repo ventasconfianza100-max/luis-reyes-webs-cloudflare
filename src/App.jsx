@@ -32,16 +32,18 @@ import CommercialLandingPage from './components/CommercialLandingPage'
 import NotFoundPage from './components/NotFoundPage'
 import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
+import RealBusinessCasePage from './components/RealBusinessCasePage'
 
 import { getMeta, canonicalFor } from './seo'
 
 export default function App({ initialPath }) {
+  const normalizePath = (value) => value === '/' ? '/' : value.replace(/\/+$/, '')
   const [path, setPath] = useState(
-    initialPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/')
+    normalizePath(initialPath ?? (typeof window !== 'undefined' ? window.location.pathname : '/'))
   )
 
   useEffect(() => {
-    const handlePopState = () => setPath(window.location.pathname)
+    const handlePopState = () => setPath(normalizePath(window.location.pathname))
 
     window.addEventListener('popstate', handlePopState)
     return () => window.removeEventListener('popstate', handlePopState)
@@ -66,8 +68,9 @@ export default function App({ initialPath }) {
   }, [path])
 
   const navigateTo = (nextPath) => {
-    window.history.pushState({}, '', nextPath)
-    setPath(nextPath)
+    const normalized = normalizePath(nextPath)
+    window.history.pushState({}, '', normalized === '/' ? '/' : `${normalized}/`)
+    setPath(normalized)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -102,13 +105,17 @@ export default function App({ initialPath }) {
     content = <ProfessionalProfileProjectPage onNavigate={navigateTo} />
   } else if (path === '/proyectos-empresas/clinica-centro-atencion') {
     content = <ClinicBusinessProjectPage onNavigate={navigateTo} />
+  } else if (path === '/proyectos-empresas/munay-cueros') {
+    content = <><Navbar onNavigate={navigateTo} /><RealBusinessCasePage kind="munay" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
+  } else if (path === '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente') {
+    content = <><Navbar onNavigate={navigateTo} /><RealBusinessCasePage kind="rdlf" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos') {
     content = <ProjectsPage onNavigate={navigateTo} />
   } else if (path === '/proyectos-empresas') {
     content = <BusinessProjectsPage onNavigate={navigateTo} />
   } else if (path === '/') {
     content = (
-      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
+      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase onNavigate={navigateTo} /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
     )
   } else {
     content = <><Navbar onNavigate={navigateTo} /><NotFoundPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
