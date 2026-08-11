@@ -138,7 +138,7 @@ export function articleMetaTagsFor(path) {
 const GOOGLE_BUSINESS_URL = 'https://www.google.com/search?kgmid=/g/11z7ktq60d'
 
 const SAME_AS = [
-  'https://www.linkedin.com/in/luis-reyes-castro-959261339/',
+  'https://www.linkedin.com/in/luisreyeswebs/',
   'https://www.instagram.com/luis.rey3z/',
   // Otra faceta profesional de la misma persona: su consulta de psicólogo.
   // Cruza ambos sitios para que Google entienda "misma persona, dos negocios".
