@@ -149,7 +149,7 @@ const GOOGLE_BUSINESS_URL = 'https://www.google.com/search?kgmid=/g/11z7ktq60d'
 
 const SAME_AS = [
   'https://www.linkedin.com/in/luisreyeswebs/',
-  'https://www.instagram.com/luis.rey3z/',
+  'https://www.instagram.com/luisreyesweb.cl/',
   // Otra faceta profesional de la misma persona: su consulta de psicólogo.
   // Cruza ambos sitios para que Google entienda "misma persona, dos negocios".
   'https://www.luisreyespsicologo.cl',
