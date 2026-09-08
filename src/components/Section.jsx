@@ -17,7 +17,7 @@ export default function Section({
   spacing = 'py-16 md:py-24',
 }) {
   return (
-    <section id={id} className={`${spacing} ${className}`}>
+    <section id={id} className={`${spacing} ${id ? 'scroll-mt-20' : ''} ${className}`}>
       <div className={`${widths[width]} mx-auto px-6 ${containerClassName}`}>
         {children}
       </div>

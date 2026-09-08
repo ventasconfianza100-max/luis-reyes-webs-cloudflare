@@ -1,5 +1,6 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
+import CtaBanner from './CtaBanner'
 import Section from './Section'
 
 const WHATSAPP = 'https://wa.me/56922012534?text=' +
@@ -137,27 +138,11 @@ export default function EmpresasServiciosPage({ onNavigate }) {
         </Section>
 
         {/* Cierre / CTA */}
-        <Section spacing="pt-4 pb-20 md:pb-28">
-          <div className="rounded-3xl bg-ink text-white p-10 md:p-14 text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
-              ¿Quieres que tu empresa reciba más cotizaciones?
-            </h2>
-            <p className="text-slate-300 max-w-xl mx-auto mb-7 leading-relaxed">
-              Conversemos sin compromiso. Te muestro cómo ordenar tus servicios en una web que
-              aparezca en Google y convierta visitas en mensajes.
-            </p>
-            <a
-              href="/agenda"
-              onClick={(e) => go(e, '/agenda')}
-              className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold px-8 py-4 rounded-2xl text-sm transition-all"
-            >
-              Agenda una reunión gratis
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-              </svg>
-            </a>
-          </div>
-        </Section>
+        <CtaBanner
+          titulo="¿Quieres que tu empresa reciba más cotizaciones?"
+          texto="Te muestro cómo ordenar tus servicios en una web que aparezca en Google y convierta visitas en mensajes."
+          onNavigate={onNavigate}
+        />
       </main>
 
       <Footer onNavigate={onNavigate} />

@@ -109,8 +109,27 @@ for (const post of blogPosts) {
 
 export const ROUTES = Object.keys(metaByPath)
 
+// Rutas internas: se prerenderizan para que Cloudflare las sirva como página
+// real, pero quedan fuera del sitemap, del seo-check y de los buscadores.
+const metaInterna = {
+  '/admin': {
+    title: 'Panel interno | Luis Reyes Web',
+    description: 'Panel privado para cotizaciones, contratos y boletas de honorarios.',
+    noindex: true,
+  },
+}
+
+export const INTERNAL_ROUTES = Object.keys(metaInterna)
+
 export function getMeta(path) {
-  return metaByPath[path] || { title: 'Página no encontrada | Luis Reyes Web', description: 'La página solicitada no existe.', noindex: true }
+  return (
+    metaByPath[path] ||
+    metaInterna[path] || {
+      title: 'Página no encontrada | Luis Reyes Web',
+      description: 'La página solicitada no existe.',
+      noindex: true,
+    }
+  )
 }
 
 export function canonicalFor(path) {
