@@ -3,7 +3,6 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   ROUTES,
-  INTERNAL_ROUTES,
   getMeta,
   canonicalFor,
   jsonLdScriptsFor,
@@ -61,17 +60,6 @@ for (const routePath of ROUTES) {
   fs.mkdirSync(path.dirname(outPath), { recursive: true })
   fs.writeFileSync(outPath, html)
   console.log('✓ prerendered', routePath, '→', path.relative(root, outPath))
-}
-
-// Rutas internas (/admin): HTML real para que Cloudflare no responda 404,
-// pero sin entrar al sitemap ni a los buscadores (noindex).
-for (const routePath of INTERNAL_ROUTES) {
-  let html = applyMeta(template, routePath)
-  html = html.replace('<div id="root"></div>', `<div id="root">${render(routePath)}</div>`)
-  const outPath = path.join(distDir, routePath, 'index.html')
-  fs.mkdirSync(path.dirname(outPath), { recursive: true })
-  fs.writeFileSync(outPath, html)
-  console.log('✓ prerendered', routePath, '→', path.relative(root, outPath), '(noindex)')
 }
 
 // Página 404 real para rutas desconocidas; Cloudflare Pages la sirve automáticamente.

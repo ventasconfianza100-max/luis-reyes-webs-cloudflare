@@ -72,10 +72,6 @@ export default function Pricing() {
         <p className="text-slate-500">
           Elige el que se ajusta a tu momento. Todos incluyen reunión inicial sin costo.
         </p>
-        <p className="mt-2 text-sm text-slate-400">
-          Valores líquidos, pagaderos 50% al iniciar y 50% antes de publicar. Se emite boleta de
-          honorarios electrónica.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 items-start">
@@ -137,8 +133,7 @@ export default function Pricing() {
         <p className="text-sm text-slate-600 leading-relaxed">
           <strong className="text-slate-800">Sin riesgo para ti:</strong> partimos con una reunión
           gratuita y sin compromiso. Incluyo revisiones hasta que tu web quede como la necesitas, y no
-          desaparezco el día de la entrega. Si después quieres mantención, son $10.000 líquidos al mes,
-          sin permanencia.
+          desaparezco el día de la entrega.
         </p>
       </div>
     </Section>
