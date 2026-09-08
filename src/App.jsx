@@ -33,6 +33,7 @@ import NotFoundPage from './components/NotFoundPage'
 import AboutPage from './components/AboutPage'
 import DiagnosticPage from './components/DiagnosticPage'
 import RealBusinessCasePage from './components/RealBusinessCasePage'
+import AdminRoute from './admin/AdminRoute'
 
 import { getMeta, canonicalFor } from './seo'
 
@@ -75,7 +76,14 @@ export default function App({ initialPath }) {
   }
 
   let content
-  if (path === '/diseno-web-talca') {
+  if (path === '/admin') {
+    // Panel interno: sin Navbar, Footer ni WhatsApp flotante.
+    return (
+      <div className="min-h-screen">
+        <AdminRoute onNavigate={navigateTo} />
+      </div>
+    )
+  } else if (path === '/diseno-web-talca') {
     content = <DisenoWebTalcaPage onNavigate={navigateTo} />
   } else if (path === '/tienda-online-chile') {
     content = <TiendaOnlineChilePage onNavigate={navigateTo} />
@@ -115,7 +123,7 @@ export default function App({ initialPath }) {
     content = <BusinessProjectsPage onNavigate={navigateTo} />
   } else if (path === '/') {
     content = (
-      <><Navbar onNavigate={navigateTo} /><main><div id="inicio"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase onNavigate={navigateTo} /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
+      <><Navbar onNavigate={navigateTo} /><main><div id="inicio" className="scroll-mt-16"><Hero onNavigate={navigateTo} /></div><Reveal><Stats /></Reveal><Reveal><div id="servicios" className="scroll-mt-16"><Services onNavigate={navigateTo} /></div></Reveal><Reveal><ProjectsShowcase onNavigate={navigateTo} /></Reveal><WhyChooseMe /><Reveal><Process /></Reveal><Reveal><div id="incluye" className="scroll-mt-16"><Features /></div></Reveal><Reveal><Pricing /></Reveal><Reveal><FAQ /></Reveal><Reveal><LeadMagnet /></Reveal></main><Footer onNavigate={navigateTo} /></>
     )
   } else {
     content = <><Navbar onNavigate={navigateTo} /><NotFoundPage onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
