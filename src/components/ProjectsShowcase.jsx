@@ -2,17 +2,6 @@ import Section from './Section'
 
 const projects = [
   {
-    name: 'RZ Juguetería',
-    type: 'Tienda online a medida',
-    result:
-      'E-commerce para una juguetería de Talca, con productos organizados por etapa e interés y una experiencia de compra cercana.',
-    built: ['Catálogo por categorías', 'Carrito y pago online con Webpay', 'Favoritos y compra acompañada', 'Envíos a todo Chile y retiro en Talca'],
-    image: '/portfolio-rz-jugueteria.avif',
-    alt: 'Tienda online RZ Juguetería con juguetes, material sensorial y productos educativos',
-    chip: 'bg-pink-50 text-pink-600 border-pink-200',
-    href: '/proyectos-empresas/rz-jugueteria',
-  },
-  {
     name: 'Empresa de servicios',
     type: 'Sitio multipágina',
     result:

@@ -109,8 +109,6 @@ export default function App({ initialPath }) {
     content = <><Navbar onNavigate={navigateTo} /><RealBusinessCasePage kind="munay" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente') {
     content = <><Navbar onNavigate={navigateTo} /><RealBusinessCasePage kind="rdlf" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
-  } else if (path === '/proyectos-empresas/rz-jugueteria') {
-    content = <><Navbar onNavigate={navigateTo} /><RealBusinessCasePage kind="rz" onNavigate={navigateTo} /><Footer onNavigate={navigateTo} /></>
   } else if (path === '/proyectos') {
     content = <ProjectsPage onNavigate={navigateTo} />
   } else if (path === '/proyectos-empresas') {

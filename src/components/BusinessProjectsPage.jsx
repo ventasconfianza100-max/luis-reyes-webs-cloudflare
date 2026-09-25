@@ -1,10 +1,5 @@
 const projects = [
   {
-    href: '/proyectos-empresas/rz-jugueteria',
-    title: 'RZ Juguetería',
-    category: 'E-commerce real',
-  },
-  {
     href: '/proyectos-empresas/munay-cueros',
     title: 'Tienda online Munay Cueros',
     category: 'E-commerce real',
