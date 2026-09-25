@@ -87,6 +87,11 @@ export const metaByPath = {
     description:
       'Caso real de desarrollo web para la Escuela de Fútbol Ronald De La Fuente: categorías, horarios, sedes, entrenadores, galería, torneos e inscripción por WhatsApp.',
   },
+  '/proyectos-empresas/rz-jugueteria': {
+    title: 'Tienda Online para RZ Juguetería | Caso de e-commerce en Talca',
+    description:
+      'Caso real de desarrollo web para RZ Juguetería: catálogo de juguetes y recursos educativos, carrito, favoritos, Webpay, envíos a Chile y retiro en Talca.',
+  },
   '/agenda': {
     title: 'Agenda una reunión — Meet, Zoom o WhatsApp | Luis Reyes Castro',
     description:
@@ -306,6 +311,7 @@ const breadcrumbLabels = {
   '/proyectos-empresas/clinica-centro-atencion': 'Clínica y centro de atención',
   '/proyectos-empresas/munay-cueros': 'Tienda online Munay Cueros',
   '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente': 'Web Escuela de Fútbol RDLF',
+  '/proyectos-empresas/rz-jugueteria': 'Tienda online RZ Juguetería',
   '/agenda': 'Agenda una reunión',
   '/blog': 'Blog',
 }
@@ -458,7 +464,7 @@ export function jsonLdFor(path) {
     })
   }
 
-  if (path === '/proyectos-empresas/munay-cueros' || path === '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente') {
+  if (path === '/proyectos-empresas/munay-cueros' || path === '/proyectos-empresas/escuela-futbol-ronald-de-la-fuente' || path === '/proyectos-empresas/rz-jugueteria') {
     schemas.push({
       '@context': 'https://schema.org',
       '@type': 'CreativeWork',

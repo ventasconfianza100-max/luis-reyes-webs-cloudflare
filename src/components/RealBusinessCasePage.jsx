@@ -1,4 +1,17 @@
 const cases = {
+  rz: {
+    eyebrow: 'Caso real · E-commerce',
+    title: 'Tienda online para RZ Juguetería',
+    intro: 'Una tienda online cercana y fácil de explorar para una juguetería de Talca, con productos pensados para jugar, aprender y acompañar distintas etapas del desarrollo.',
+    challenge: 'RZ necesitaba ordenar un catálogo amplio de juguetes, recursos sensoriales y materiales educativos, ayudando a las familias a encontrar el producto adecuado y comprar con confianza.',
+    solution: ['Catálogo organizado por categorías: juguetes, sensoriales, educativos, bebés y creatividad.', 'Filtros y secciones guiadas por objetivos como calma, aprendizaje, movimiento e imaginación.', 'Carrito de compras, favoritos y pago online seguro con Webpay.', 'Opciones de envío a todo Chile y retiro gratuito en la tienda de Talca.', 'Compra acompañada por WhatsApp y contenido para orientar a las familias.', 'Publicación y despliegue en Cloudflare Workers.'],
+    stack: ['JavaScript', 'E-commerce', 'Webpay', 'Diseño adaptable', 'Cloudflare Workers'],
+    result: 'Una experiencia de compra completa que combina catálogo, orientación y operación local: las familias pueden explorar, pagar online y elegir despacho o retiro en Talca.',
+    publicUrl: 'https://rzjugueteria.psi-luisreyes.workers.dev/',
+    serviceHref: '/tienda-online-chile',
+    serviceLabel: 'Ver servicio de tienda online',
+    whatsapp: 'Hola Luis, vi el caso de RZ Juguetería y quiero cotizar una tienda online para mi negocio.',
+  },
   munay: {
     eyebrow: 'Caso real · E-commerce',
     title: 'Tienda online para Munay Cueros',
